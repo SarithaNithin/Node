@@ -1,0 +1,60 @@
+{
+  "name": "serverless-api",
+  "version": "1.0.0",
+  "description": "nodejs api",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate",
+    "test": "cross-env NODE_ENV=test jest --forceExit --detectOpenHandles  --watchAll --maxWorkers=2",
+    "pretest": "cross-env NODE_ENV=test npm run migrate:reset"
+  },
+  "author": "saritha k s",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "chai": "^4.3.6",
+    "cors": "^2.8.5",
+    "country-state-city": "^3.0.1",
+    "country-state-picker": "^1.1.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "form-data": "^4.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mailgun.js": "^5.0.1",
+    "mongodb": "^4.4.0",
+    "mysql": "github:mysqljs/mysql",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^8.9.0",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saritha3N/projects.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Saritha3N/projects/issues"
+  },
+  "homepage": "https://github.com/Saritha3N/projects#readme",
+  "keywords": [],
+  "directories": {
+    "test": "tests"
+  }
+}
